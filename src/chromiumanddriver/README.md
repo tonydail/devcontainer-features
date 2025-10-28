@@ -21,4 +21,4 @@ A feature to install Chromium and Chromium driver
 
 ---
 
-_Note: This file was auto-generated from the [devcontainer-feature.json](devcontainer-feature.json).  Add additional notes to a `NOTES.md`._
+_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/tonydail/devcontainer-features/blob/main/src/chromiumanddriver/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._
