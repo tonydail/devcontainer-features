@@ -10,7 +10,6 @@ jobs:
       contents: write
       pull-requests: write
       packages: write
-      packages: read
     steps:
       - name: "Checkout Repository"
         uses: actions/checkout@v4
