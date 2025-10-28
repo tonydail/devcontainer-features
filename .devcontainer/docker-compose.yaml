@@ -1,0 +1,32 @@
+services:
+  code_container:
+    extends:
+      service: service_base
+    image: mcr.microsoft.com/devcontainers/base:bullseye
+    #image: mcr.microsoft.com/devcontainers/base:ubuntu
+    container_name: ${SERVICE_NAME}_code
+    tty: true
+    command: sh
+    volumes:
+      - sync_data:/${SERVICE_NAME}:rw
+  code_sync:
+    extends:
+      service: service_base
+    image: alpine:latest
+    container_name: ${SERVICE_NAME}_sync
+    tty: true
+    volumes:
+      - sync_data:/${SERVICE_NAME}:rwo
+  service_base:
+    image: mcr.microsoft.com/devcontainers/base:bullseye
+    env_file:
+      - .env
+    networks:
+      - devcontainer_network_alias
+networks:
+  devcontainer_network_alias:
+    name: ${SERVICE_NAME}_network
+    driver: bridge
+volumes:
+  sync_data:
+  unison: 

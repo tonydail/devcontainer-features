@@ -1,25 +1,39 @@
 {
-    "image": "mcr.microsoft.com/devcontainers/javascript-node:1-20-bookworm",
-    "customizations": {
-        "vscode": {
-            "settings": {
-                "json.schemas": [
-                    {
-                        "fileMatch": [
-                            "*/devcontainer-feature.json"
-                        ],
-                        "url": "https://raw.githubusercontent.com/devcontainers/spec/main/schemas/devContainerFeature.schema.json"
-                    }
-                ]
-            },
-            "extensions": [
-                "mads-hartmann.bash-ide-vscode"
-            ]
-        }
-    },
-    "features": {
-        "ghcr.io/devcontainers/features/docker-in-docker:2": {}
-    },
-    "remoteUser": "node",
-    "updateContentCommand": "npm install -g @devcontainers/cli"
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {},
+    "ghcr.io/devcontainers/features/common-utils:1": {},
+    "ghcr.io/devcontainers/features/github-cli:1": {},
+    "ghcr.io/devcontainers/features/common-utils:2": {},
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {},
+    "ghcr.io/devcontainers-extra/features/devcontainers-cli:1": {}
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "tomoki1207.pdf",
+        "ms-azuretools.vscode-docker",
+        "GitHub.vscode-pull-request-github",
+        "GitHub.copilot",
+        "GitHub.copilot-chat",
+        "Shynet.vscode-taskkill",
+        "alefragnani.Bookmarks",
+        "moshfeu.compare-folders",
+        "streetsidesoftware.code-spell-checker",
+        "mhutchie.git-graph",
+        "EditorConfig.EditorConfig",
+        "mikestead.dotenv",
+        "yzhang.markdown-all-in-one",
+        "rogalmic.bash-debug",
+        "mads-hartmann.bash-ide-vscode"
+      ]
+    }
+  },
+  "name": "${localWorkspaceFolderBasename}",
+  "dockerComposeFile": [
+    "docker-compose.yaml"
+  ],
+  "service": "code_container",
+  "workspaceFolder": "/${localWorkspaceFolderBasename}",
+  "initializeCommand": ".devcontainer/host-init.sh",
+  "postCreateCommand": "sudo chown -R vscode:vscode /${localWorkspaceFolderBasename} && while [ ! -f .devcontainer/container-post-create.sh ]; do sleep 1; done && .devcontainer/container-post-create.sh"
 }
