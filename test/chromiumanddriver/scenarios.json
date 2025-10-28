@@ -1,0 +1,19 @@
+{
+    "test_with_debian": {
+        "image": "mcr.microsoft.com/devcontainers/base:debian",
+        "features": {
+            "chromiumanddriver": {
+                "version": "latest"
+            }
+        }
+    },
+    "test_with_debian_version": {
+        "image": "mcr.microsoft.com/devcontainers/base:debian",
+        "features": {
+            "chromiumanddriver": {
+                "version": "141.0.7390.122"
+            }
+        }
+    }
+
+}

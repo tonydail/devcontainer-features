@@ -1,0 +1,20 @@
+{
+  "id": "chromiumanddriver",
+  "version": "1.0.0",
+  "name": "Chromium and Driver",
+  "description": "A feature to install Chromium and Chromium driver",
+  "options": {
+    "version": {
+      "type": "string",
+      "proposals": [
+        "latest",
+        "stable"
+      ],
+      "default": "latest",
+      "description": "Select Chromium version to install. Use 'latest' for the newest version, 'stable' for the stable release, or specify a version number (e.g., '119.0.6045.105-1')."
+    }
+  },
+	"installsAfter": [
+      "ghcr.io/devcontainers/features/common-utils"
+  ]
+}
